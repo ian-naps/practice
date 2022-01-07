@@ -1,32 +1,65 @@
 #include <iostream>
 using namespace std;
 
+//global variables
+int numOfJudges;
 
-int findAverageScore(double score){
-    int count=0;
-    int highestValue;
+//array notes: contestants are in column 0 of 2d Array. Judges scores are numOfJudges columns, and the average score is in the final column.
+//This is the array column number
+const int contestantPlusJudgesPlusAverage = numOfJudges+2;
+//assume that there are 10 contestants
+//this is the number of rows
+const int rowsOfAllContestant = 10;
+int highestScore[rowsOfAllContestant];
 
-    highest = highestScore[0];
-    for (count = 1; count<scoreArray; count++)
+//stores contestant number and judge scores in row format with contestant # starting at row 0 column 0.
+//highest value is stored in last position of array
+double allContestantJudgeScores[contestantPlusJudgesPlusAverage][rowsOfAllContestant] = {NULL};
+
+int findAverageScore(const int contestantPlusJudgesPlusAverage[const int][const int], double allContestantJudgeScores, int column);{
+    //used in for loop
+    int count;
+    //find element of array and make it equal zero
+    int highestValue = 0;
+    //find element of array and make it equal zero
+    int lowestValue=0;
+    //array columns
+    int columns=0;
+    //average score
+    double averageScore = 0.0;
+    //array position of highest score
+    int arrayPosition = 0;
+
+    //find highest value
+    for (count = 1; count<contestantPlusJudgesPlusAverage-1; count++)
     {
-        if (highestScore[count]>highestValue)
-        highestValue = highestScore[count];
+        if (allContestantJudgeScores[columns][count]>highestValue){
+        highestValue = allContestantJudgeScores[count][0];
+        //take note of count value for deletion
+        arrayPosition = count;
+        }
     }
+
+    //remove highest value from array
+    allContestantJudgeScores[columns][arrayPosition] = 0
+
+
+
+
+    //increment column number to next contestant that uses the function
+    columns+= columns;
+
     return score;
 }
 
 int main(){
-    int numOfJudges;
-    //contestant array
-    const int scoreArray = numOfJudges+1;
+    
 
     int contestantLoopCounter=0;
-
-    //stores contestant number and scores 
-    int contestantNumber[scoreArray];
+    int contestantNumber;
+    
     
     //stores scores of contestants
-    int highestScore[scoreArray];
 
     cout << "Please enter the number of judges:\n";
     cin >> numOfJudges;
