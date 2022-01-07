@@ -1,7 +1,7 @@
 Sample Exam 
 Part 1
 
-1 Write a complete C++ program that takes the judges' scores for a gymnastic event and finds each contestant's score. 
+1. Write a complete C++ program that takes the judges' scores for a gymnastic event and finds each contestant's score. 
 It should satisfy all the following specifications: it first reads in an integer N that gives the number of judges. It then reads in a contestant number followed by N integers
 which are the scores given the contestant by the N judges. The scores should be read into an array, and then the program calls a function called findAverageScore that takes 
 N and the array of judges' scores as arguments. The function should find and drop the highest score and the lowest score, and then find and return the average of the remaining
